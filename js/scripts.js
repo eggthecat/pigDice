@@ -1,10 +1,12 @@
 // business logic
+var currentPlayer = 0;
+
 function player (startScore, startTurn) {
   this.score = startScore;
   this.turn = startTurn;
   this.turnScore = startTurnScore;
 
-  if (score > 100) {
+  if (score >= 100) {
     alert("winner");
   };
 };
