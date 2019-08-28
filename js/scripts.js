@@ -2,8 +2,10 @@
 function player (startScore, startTurn) {
   this.score = startScore;
   this.turn = startTurn;
+  this.turnScore = startTurnScore;
+
   if (score > 100) {
-    alert ("winner");
+    alert("winner");
   };
 };
 
@@ -17,10 +19,10 @@ player.prototype.roll = function () {
 $(document).ready(function(){
   $("button#start").click(function(event){
     event.preventDefault();
-    var start = $("#start").val();
-    var reset = $("#reset").val();
-
-
+    var start = $("#startButton").val();
+    var reset = $("#resetButton").val();
+    var hold = $("#holdButton").val();
+    var roll = $("#rollButton").val();
   })
 
 });
