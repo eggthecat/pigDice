@@ -17,11 +17,17 @@ function player(name, playerId) {
   this.score = 0,
 };
 
+// Rolling dice
+player.prototype.diceRoll = function() {
+  var dice1 = Math.floor( Math.random() * 6 ) +1;
+  var dice2 = Math.floor( Math.random() * 6 ) +1;
+  this.roll = this.roll + dice1 + dice2;
+    if ((dice1 === 1) || (dice2 === 1)) {
+      this.roll = 0;
+    }
+}
 
-
-// var diceRoll = Math.floor( Math.random() * 6 ) +1;
-//
-// var currentPlayer = 0;
+var currentPlayer = 0;
 
 
 //  player (startScore) {
