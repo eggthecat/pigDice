@@ -1,4 +1,12 @@
 // business logic
+function player (startScore, startTurn {
+  this.score = startScore;
+  this.turn = startTurn;
+}
+
+player.prototype.roll = function () {
+
+}
 
 
 
