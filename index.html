@@ -10,19 +10,17 @@
   </head>
   <body>
     <div class="container">
-      <table>
-        <tr>
-          <td class="tableCell" id="1"></td>
-          <td class="tableCell" id="2"></td>
-          <td class="tableCell" id="3"></td>
-        </tr>
-      </table>
-
+      <div class="grid-container">
+        <div class="item1" > Player 1 </div>
+        <div class="item2"> <button type="click" id="startButton" name="button">Start</button> <button type="click" id="resetButton" name="button">reset</button> </div>
+        <div class="item3"> Player 2 </div>
+        <div class="item4"> <span id="playerOneScore"></span> </div>
+        <div class="item5"> <span id="diceRoll"></span> </div>
+        <div class="item6"> <span id="playerTwoScore"></span> </div>
+        <div class="item7"> <span id="playerOneTurnScore"></span> </div>
+        <div class="item8"> <button type="click" id="rollButton" name="button">Roll</button> <br> <button type="click" id="holdButton" name="button">Hold</button> </div>
+        <div class="item9"> <span id="playerTwoTurnScore"></span> </div>
+      </div>
     </div>
-    <button type="button" name="button" id="start">start</button>
-    <button type="click" name="button" id="reset">resest</button>
-    <button type="click" name="button" id="hold">hold</button>
-    <button type="click" name="button" id="roll">roll</button>
-
   </body>
 </html>
