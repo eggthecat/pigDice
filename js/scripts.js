@@ -9,25 +9,49 @@ function playerRoster() {
 playerRoster.prototype.addPlayer = function(player) {
   this.players.push(player);
 };
+
 // constructor for player
 function player(name, playerId) {
   this.name = name;
   this.playerID = newIDforPlayer +=1;
   this.roll = 0,
-  this.score = 0,
+  this.score = 0
 };
 
 // Rolling dice
 player.prototype.diceRoll = function() {
   var dice1 = Math.floor( Math.random() * 6 ) +1;
-  var dice2 = Math.floor( Math.random() * 6 ) +1;
   this.roll = this.roll + dice1 + dice2;
     if ((dice1 === 1) || (dice2 === 1)) {
       this.roll = 0;
+      changeTurn();
     }
 }
 
-var currentPlayer = 0;
+//Score Keeping
+// prototype for keeping scores
+player.prototype.scoreRoll = function() {
+  this.score = this.roll + this.score;
+  this.roll = 0;
+}
+//adjusting player turn
+function updateActivePlayer (inputRoster) {
+  if (inputRoseter.activePlayer === (inputRoster.players.length -1)) {
+    inputRoster.activePlayer = 0;
+    console.log(inputRoster);
+  } else {
+    inputRoster.activePlayer += 1;
+    console.log(inputRoster);
+  }
+}
+function changeTurn() {
+gamePlayers.players[gamePlayers.activePlayer].scoreRoll();
+$('.player-score' + gamePlayers.activePlayer).text(gamePlayers.players[gamePlayers.activePlayer].score)
+updateActivePlayer(gamePlayers);
+}
+
+ //
+// var currentPlayer = 0;
 
 
 //  player (startScore) {
@@ -64,12 +88,10 @@ var currentPlayer = 0;
     // all scores are turned to 0
       // player 1 begins
 
-
-
-  //   };
-  // };
-
 // user interface
+var gamePlayers = new PlayerRoster();
+var newIDforPlayer = 0;
+
 $(document).ready(function(){
   $("button#restart").click(function(event){
     event.preventDefault();
